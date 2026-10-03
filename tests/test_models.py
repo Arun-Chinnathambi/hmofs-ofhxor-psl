@@ -1,7 +1,7 @@
 import numpy as np
 
 from hmofs_ofhxor_psl import HMOFS, ProbabilisticSuperLearner
-from hmofs_ofhxor_psl.data import synth_ecu_like
+from hmofs_ofhxor_psl.datasets import synth_ecu_like
 
 
 def _data():

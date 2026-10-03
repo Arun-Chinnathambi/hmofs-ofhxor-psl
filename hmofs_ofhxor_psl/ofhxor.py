@@ -18,8 +18,8 @@ class OFHXOR:
     def __init__(self, optimal_key: bytes):
         self.key = optimal_key
 
-    def encrypt(self, plaintext: bytes) -> bytes:
-        nonce = os.urandom(16)
+    def encrypt(self, plaintext: bytes, nonce: bytes = None) -> bytes:
+        nonce = nonce or os.urandom(16)
         half = len(plaintext) // 2
         d1, d2 = plaintext[:half], plaintext[half:]
         c1 = xor_bytes(d1, self.key) if d1 else b""
